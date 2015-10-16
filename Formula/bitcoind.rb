@@ -3,10 +3,10 @@ class Bitcoind < Formula
   homepage "https://bitcoin.org/"
   url "https://github.com/bitcoin/bitcoin/archive/v0.11.1.tar.gz"
   sha256 "6b238ab46bb10c7a83237dfd69b09c95f08043bbe0b478f9c256b9536186b8d2"
-  
+
   head do
     url "https://github.com/bitcoin/bitcoin.git"
-    
+
     depends_on "libevent"
   end
 
@@ -22,6 +22,7 @@ class Bitcoind < Formula
   depends_on "boost"
   depends_on "openssl"
   depends_on "miniupnpc" => :recommended
+  depends_on "zmq" => :recommended
 
   if build.with? "gui"
     depends_on "qt5"
